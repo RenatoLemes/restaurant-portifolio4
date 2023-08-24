@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Tables at {{ restaurant.name }}</title>
+</head>
+<body>
+    <h1>Available Tables at {{ restaurant.name }}</h1>
+    <ul>
+        {% for table in available_tables %}
+            <li><a href="{% url 'make_reservation' restaurant.id table.id %}">Table {{ table.table_number }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
